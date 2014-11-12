@@ -1,7 +1,7 @@
 upto
 ====
 	
-Bash command that allows to go up to a certain directory. Avoid counting how many levels you have to go up in a folder tree and just type where you want to go! no more '../../../..'.
+Bash command that allows to go up to a certain directory. Stop counting how many levels you have to go up in a folder tree and just type where you want to go! No more `../../../..`.
 
 Usage
 -------
@@ -17,4 +17,4 @@ Configuration
 
 Just add an alias in your `~/.bash_aliases`
 
-    `alias upto=". /path/to/upto.sh`
+    alias upto=". /path/to/upto.sh

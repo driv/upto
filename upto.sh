@@ -1,11 +1,4 @@
 #!/bin/bash
-EXPRESSION="$1"
-if [ -z "$EXPRESSION" ]; then
-	echo "A folder expression must be provided"
-else
- _upto
-fi
-
 function _upto() {
 	CURRENT_FOLDER="$(pwd)"
 	MATCHED_DIR=""
@@ -25,3 +18,10 @@ function _upto() {
 		echo "No Match."
 	fi
 }
+
+EXPRESSION="$1"
+if [ -z "$EXPRESSION" ]; then
+	echo "A folder expression must be provided"
+else
+ _upto
+fi
