@@ -1,5 +1,5 @@
 #!/bin/bash
-function _upto() {
+function upto() {
 	EXPRESSION="$1"
 	if [ -z "$EXPRESSION" ]; then
 		echo "A folder expression must be provided"
