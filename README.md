@@ -1,9 +1,11 @@
 upto
 ====
 	
-Bash command that allows to go up to a certain directory. Stop counting how many levels you have to go up in a folder tree and just type where you want to go! No more `../../../..`.
+Bash function that allows to go up to a certain directory.
 
-Usage
+Stop counting how many levels you have to go up in a folder tree and just type where you want to go! No more `cd ../../../..`.
+
+Usage example
 -------
 
 Current dir `/home/username/myfolder/myproject/mysubproject/function1/subfunction2/`
@@ -15,6 +17,4 @@ upto will go to the highest folder matched, in the previous example, if you writ
 Configuration
 -------------
 
-Just add an alias in your `~/.bash_aliases`
-
-    alias upto=". /path/to/upto.sh
+Just add `upto.sh` to your `/etc/profile.d/` folder.
