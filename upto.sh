@@ -29,3 +29,13 @@ function upto() {
 		return 1
 	fi
 }
+
+# complete upto
+_upto () {
+	# necessary locals for _init_completion
+	local cur prev words cword
+	_init_completion || return
+
+	COMPREPLY+=( $( compgen -W "$( echo ${PWD//\// } )" -- $cur ) )
+}
+complete -F _upto upto
