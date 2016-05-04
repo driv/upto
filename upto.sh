@@ -10,6 +10,6 @@ _upto () {
 	local cur prev words cword
 	_init_completion || return
 
-	COMPREPLY+=( $( compgen -W "$( echo ${PWD//\// } )" -- $cur ) )
+	COMPREPLY+=( $( compgen -W "${PWD//\// }" -- $cur ) )
 }
 complete -F _upto upto
