@@ -1,6 +1,6 @@
 #!/bin/bash
 function upto() { 
-  local D=${PWD%${PWD#*/*([^/])$1*/}}
+  local D="${PWD%"${PWD#*/*([^/])$1*/}"}"
   [[ -z "$D" ]] || cd "$D"
 }
 
