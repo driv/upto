@@ -23,19 +23,8 @@ Function Up-To {
     [string]$target
   )
 
-  $target = $target.ToLower()
-
-  $path = (Get-Item -Path ".\").FullName.ToLower()
-  $index = $path.IndexOf($target)
-  If ($index -gt -1){
-    $nextSlash = $path.IndexOf("\", $index)
-    If ($nextSlash -eq -1) {
-      $nextSlash = $path.Length
-    }
-    Set-Location -Path ($path[0..$nextSlash] -join "")
-  } Else {
-    Write-Host -foregroundcolor Red $target 'not found'
-  }
+  Set-Location -Path (
+    [regex]::match((Get-Item -Path ".\").FullName, "(.*?" + $target + ".*?(\\|$))|(^.*$)").Value)
 }
 Set-Alias upto Up-To
 Export-ModuleMember -Function Up-To -Alias upto
