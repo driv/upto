@@ -38,4 +38,6 @@ _upto () {
 
 	COMPREPLY+=( $( compgen -W "$( echo ${PWD//\// } )" -- $cur ) )
 }
-complete -F _upto upto
+# This complete scheme relies on bash_completion, and the subsequent
+# _init_completion function to work.
+declare -f _init_completion > /dev/null && complete -F _upto upto
